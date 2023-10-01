@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:islami_app_c9/hadeth_details.dart';
 import 'package:islami_app_c9/hadeth_model.dart';
 import 'package:islami_app_c9/my_theme_data.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AhadethTab extends StatefulWidget {
   @override
@@ -22,7 +23,7 @@ class _AhadethTabState extends State<AhadethTab> {
           thickness: 2,
           color: MyThemeData.primary,
         ),
-        Text("Ahadeth"),
+        Text(AppLocalizations.of(context)!.ahadeth),
         Divider(
           thickness: 2,
           color: MyThemeData.primary,
