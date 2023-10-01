@@ -5,8 +5,16 @@ class SebhaTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.orange,
+    return Center(
+      child: Column(
+        children: [
+          Image.asset("assets/images/sebha_bg.png"),
+          SizedBox(
+            height: 8,
+          ),
+          Text("عدد التسبيحات"),
+        ],
+      ),
     );
   }
 }
