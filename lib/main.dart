@@ -4,6 +4,7 @@ import 'package:islami_app_c9/hadeth_details.dart';
 import 'package:islami_app_c9/home_screen.dart';
 import 'package:islami_app_c9/my_theme_data.dart';
 import 'package:islami_app_c9/sura_details.dart';
+import 'package:islami_app_c9/tabs/radio.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
         HomeScreen.routeName: (context) => HomeScreen(),
         SuraDetails.routeName: (context) => SuraDetails(),
         HadethDetails.routeName: (context) => HadethDetails(),
+        RadioTab.routeName: (context) => RadioTab(),
       },
       theme: MyThemeData.lightTheme,
       //  darkTheme: MyThemeData.darkTheme,

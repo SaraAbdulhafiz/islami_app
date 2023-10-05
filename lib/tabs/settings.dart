@@ -1,12 +1,88 @@
 import 'package:flutter/material.dart';
+import 'package:islami_app_c9/my_theme_data.dart';
 
-class SettingsTab extends StatelessWidget {
+import '../bottom_sheets/show_language_bottom_sheet.dart';
+
+class SettingsTab extends StatefulWidget {
   const SettingsTab({super.key});
 
   @override
+  State<SettingsTab> createState() => _SettingsTabState();
+}
+
+class _SettingsTabState extends State<SettingsTab> {
+  @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.brown,
+    return Padding(
+      padding: const EdgeInsets.all(18.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Text("Language"),
+          InkWell(
+            onTap: () {
+              showLanguageBottomSheet(context);
+            },
+            child: Container(
+              margin: EdgeInsets.symmetric(horizontal: 18),
+              padding: EdgeInsets.symmetric(horizontal: 12),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(color: MyThemeData.primary)),
+              child: Text("English"),
+            ),
+          ),
+          SizedBox(height: 18),
+          Text("Mode"),
+          InkWell(
+            onTap: () {
+              showThemingBottomSheet();
+            },
+            child: Container(
+              margin: EdgeInsets.symmetric(horizontal: 18),
+              padding: EdgeInsets.symmetric(horizontal: 12),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(color: MyThemeData.primary)),
+              child: Text("Light"),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  void showLanguageBottomSheet(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      shape: OutlineInputBorder(
+        borderSide: BorderSide(color: Colors.transparent),
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(18),
+          topRight: Radius.circular(18),
+        ),
+      ),
+      builder: (context) {
+        return LanguageBottomSheet();
+      },
+    );
+  }
+
+  void showThemingBottomSheet() {
+    showModalBottomSheet(
+      context: context,
+      shape: OutlineInputBorder(
+        borderSide: BorderSide(color: Colors.transparent),
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(18),
+          topRight: Radius.circular(18),
+        ),
+      ),
+      builder: (context) {
+        return Container(
+          height: MediaQuery.of(context).size.height * .6,
+        );
+      },
     );
   }
 }
