@@ -5,6 +5,7 @@ import 'package:islami_app_c9/providers/my_provider.dart';
 import 'package:provider/provider.dart';
 
 import '../bottom_sheets/show_language_bottom_sheet.dart';
+import '../bottom_sheets/show_theme_bottom_sheet.dart';
 
 class SettingsTab extends StatefulWidget {
   const SettingsTab({super.key});
@@ -50,7 +51,7 @@ class _SettingsTabState extends State<SettingsTab> {
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
                   border: Border.all(color: MyThemeData.primary)),
-              child: Text("Light"),
+              child: Text(pro.theme == ThemeMode.light ? "Light" : "Dark"),
             ),
           ),
         ],
@@ -85,9 +86,7 @@ class _SettingsTabState extends State<SettingsTab> {
         ),
       ),
       builder: (context) {
-        return Container(
-          height: MediaQuery.of(context).size.height * .6,
-        );
+        return ThemeingBottomSheet();
       },
     );
   }
