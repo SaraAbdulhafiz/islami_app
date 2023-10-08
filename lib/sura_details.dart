@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:islami_app_c9/my_theme_data.dart';
 import 'package:islami_app_c9/providers/sura_details_provider.dart';
 import 'package:islami_app_c9/sura_model.dart';
@@ -16,7 +15,7 @@ class _SuraDetailsState extends State<SuraDetails> {
 
   @override
   Widget build(BuildContext context) {
-    // var provider = Provider.of<SuraDetailsProvider>(context);
+    // var provider = Provider.of<MyProvider>(context);
     var args = ModalRoute
         .of(context)
         ?.settings
